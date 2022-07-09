@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RoyalBlue"
+        android:elevation="10dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="10dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/ib_logout"
+                    android:src="@drawable/ic_round_logout_24"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/ib_booking_scheduler"
+                    android:src="@drawable/ic_round_date_range_24"
+                    android:layout_marginEnd="16dp"
+                    android:background="@android:color/transparent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ib_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+                    android:id="@+id/view_center_avatar"
+                    android:layout_width="3dp"
+                    android:layout_height="6dp"
+                    app:layout_constraintBottom_toBottomOf="@id/img_avatar"
+                    app:layout_constraintEnd_toEndOf="@id/img_avatar"
+                    app:layout_constraintStart_toStartOf="@id/img_avatar"
+                    app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_round_person_24"
+                    android:tint="@color/black"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width=".8dp"
+                    app:civ_circle_background_color="@color/SteelBlue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Đăng nhập"
+                    android:textColor="@color/WhiteSmoke"
+                    app:fontFamily="@font/svn_avo_bold"
+                    app:layout_constraintBottom_toTopOf="@id/view_center_avatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toEndOf="@id/img_avatar"
+                    app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Đăng Ký"
+                    android:textColor="@color/WhiteSmoke"
+                    app:fontFamily="@font/svn_avo_bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="@id/tv_name"
+                    app:layout_constraintTop_toBottomOf="@id/view_center_avatar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:measureAllChildren="true"
+        android:paddingHorizontal="16dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/materialCardView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                app:cardCornerRadius="10dp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/img_home" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha=".5"
+                    android:background="@color/gray" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
+                    app:layout_constraintTop_toTopOf="@+id/materialCardView">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nền tảng y tế"
+                        android:textColor="@color/yellow"
+                        android:textSize="30sp"
+                        app:fontFamily="@font/svn_avo_bold" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Chăm sóc sức khỏe toàn diện "
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:fontFamily="@font/svn_avo_bold" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ly_icon_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/materialCardView">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_specialist_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Khám chuyên khoa"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_phone_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Khám sức khỏe từ xa"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_health_care_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Khám sức khỏe bao quát"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ly_icon_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ly_icon_first">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_ear_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Xét nghiệm\ny học"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_think_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Sức khỏe\ntinh thần"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/CadetBlue"
+                    app:cardCornerRadius="10dp"
+                    app:cardUseCompatPadding="true"
+                    app:contentPadding="12dp">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:src="@drawable/ic_teeth_color" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Khám nha\nkhoa"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="11sp"
+                            app:fontFamily="@font/svn_avo" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_title_news"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/ly_icon_second"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Một số bài báo nổi bật"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_new"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_news"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                tools:listitem="@layout/item_news"
+                tools:itemCount="1"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_specialist_trend"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_new"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Chuyên khoa phổ biến"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_more_specialist_trend"
+                app:layout_constraintTop_toTopOf="@id/tv_specialist_trend"
+                app:layout_constraintBottom_toBottomOf="@id/tv_specialist_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Xem thêm"
+                android:textAlignment="center"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_specilist"
+                app:layout_constraintTop_toBottomOf="@id/tv_specialist_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_news"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_hospital_trend"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_specilist"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cơ sở y tế nổi bật"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_more_hospital_trend"
+                app:layout_constraintTop_toTopOf="@id/tv_hospital_trend"
+                app:layout_constraintBottom_toBottomOf="@id/tv_hospital_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Xem thêm"
+                android:textAlignment="center"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_hospital"
+                app:layout_constraintTop_toBottomOf="@id/tv_hospital_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_news"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_doctor_trend"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_hospital"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Đội ngũ chuyên gia"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_more_doctor_trend"
+                app:layout_constraintTop_toTopOf="@id/tv_doctor_trend"
+                app:layout_constraintBottom_toBottomOf="@id/tv_doctor_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Xem thêm"
+                android:textAlignment="center"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_doctor"
+                app:layout_constraintTop_toBottomOf="@id/tv_doctor_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_news"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_handbook_trend"
+                android:padding="16dp"
+                app:layout_constraintTop_toBottomOf="@id/rv_doctor"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Cẩm nang nổi bật"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_more_hand_book_trend"
+                app:layout_constraintTop_toTopOf="@id/tv_handbook_trend"
+                app:layout_constraintBottom_toBottomOf="@id/tv_handbook_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Xem thêm"
+                android:textAlignment="center"
+                android:layout_marginEnd="8dp"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:fontFamily="@font/svn_avo_bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_handbook"
+                app:layout_constraintTop_toBottomOf="@id/tv_more_hand_book_trend"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:nestedScrollingEnabled="false"
+                android:orientation="horizontal"
+                tools:listitem="@layout/item_news"
+                tools:itemCount="2"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.card.MaterialCardView
+                app:cardCornerRadius="10dp"
+                app:cardBackgroundColor="@color/WhiteSmoke"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintTop_toBottomOf="@id/rv_handbook"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:paddingHorizontal="8dp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        app:srcCompat="@drawable/bookingcare"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Trụ Sở tại Hà Nội"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="12sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:drawableStart="@drawable/ic_location_24"
+                        android:text="28 Thành Thái, Dịch Vọng, Cầu Giấy, Hà Nội"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/svn_avo"
+                        android:textSize="12sp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:drawableTint="@color/black"
+                        android:drawableStart="@drawable/ic_check"
+                        android:text="ĐKKD số: 0106790291. Sở KHĐT Hà Nội cấp ngày 16/03/2015"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/svn_avo"
+                        android:textSize="12sp"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="16dp"
+                        android:layout_height="wrap_content"/>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Liên hệ hợp tác"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Câu hỏi thường gặp"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Điều khoản sử dụng"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Chính sách Bảo mật"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Quy trình hỗ trợ giả quyết khiếu nại"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:text="Quy chế hoạt động"
+                        android:textColor="@color/CadetBlue"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="16dp"
+                        android:autoLink="all"
+                        android:selectAllOnFocus="false"
+                        android:linksClickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

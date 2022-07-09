@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    android:orientation="vertical"
+    tools:context=".ui.activities.ViewBookingByUserActivity">
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:text="Thông tin các ca khám"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/svn_avo_bold"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_boookings"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_detail_user_booking"
+        tools:itemCount="10"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</androidx.appcompat.widget.LinearLayoutCompat>

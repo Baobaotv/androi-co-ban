@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="18dp"
+    android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:paddingVertical="8dp"
+            android:paddingHorizontal="18dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_avatar"
+                android:scaleType="centerCrop"
+                app:riv_oval="true"
+                android:src="@drawable/img_home"
+                android:layout_width="80dp"
+                android:layout_height="80dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_name"
+                android:text="Bs.Nguyen Thi Anh"
+                android:gravity="center"
+                android:fontFamily="@font/svn_avo_bold"
+                android:textSize="18sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_specialist"
+                android:text="Chuyên khoa: Răng hàm mặt"
+                android:fontFamily="@font/svn_avo"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_hospital"
+                android:text="Bệnh viện: Bạch mai"
+                android:fontFamily="@font/svn_avo"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_marginTop="16dp"
+                android:id="@+id/tv_location_hospital"
+                android:text="Địa chỉ: Giải phóng"
+                android:fontFamily="@font/svn_avo"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

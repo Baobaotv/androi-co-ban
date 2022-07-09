@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="24dp"
+    tools:context=".ui.activities.ViewContentActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_header"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/web_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_header" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fillViewport="true"
+        android:measureAllChildren="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/img_doctor"
+                android:layout_width="180dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:src="@drawable/img_home"
+                app:riv_border_color="@color/CornflowerBlue"
+                app:riv_border_width="1dp"
+                app:riv_corner_radius="10dp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ly_booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_booking"
+                    android:drawableEnd="@drawable/ic_round_keyboard_arrow_down_24"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:text="Đặt lịch khám"
+                    android:drawableTint="@color/black"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <DatePicker
+                    android:id="@+id/calendar"
+                    android:visibility="gone"
+                    android:layout_marginTop="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="calendar"
+                    android:spinnersShown="true" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/svn_avo_bold"
+                android:layout_marginTop="18dp"
+                android:text="Thời gian làm việc"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_work_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_work_time" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="16dp">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_name_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:maxLines="3"
+                        android:textSize="18sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_hospital_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:maxLines="3"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_hospital_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:maxLines="3"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_specialist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:maxLines="3"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_des_specialist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo_bold"
+                        android:maxLines="5"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo"
+                        android:maxLines="3"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_phone_numbder"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo"
+                        android:maxLines="3"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo"
+                        android:maxLines="3"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_dob"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo"
+                        android:maxLines="3"
+                        android:textSize="14sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/svn_avo"
+                        android:maxLines="3"
+                        android:textSize="14sp" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+            <WebView
+                android:id="@+id/web_view_doctor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

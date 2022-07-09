@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/CornflowerBlue"
+    app:cardCornerRadius="12dp"
+    app:cardMaxElevation="2dp"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+<!--        <com.google.android.material.textview.MaterialTextView-->
+<!--            android:id="@+id/tv_change_date"-->
+<!--            android:layout_marginBottom="16dp"-->
+<!--            android:fontFamily="@font/svn_avo_bold"-->
+<!--            android:gravity="center"-->
+<!--            android:text="Đổi lịch khám"-->
+<!--            android:textSize="18sp"-->
+<!--            android:padding="12dp"-->
+<!--            app:fontFamily="@font/svn_avo_bold"-->
+<!--            android:background="@drawable/custom_rounded_text_view"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_date_booking"
+        android:fontFamily="@font/svn_avo_bold"
+        android:gravity="center"
+        android:text="Ngày khám : 2022-12-12"
+        android:drawableEnd="@drawable/ic_round_keyboard_arrow_down_24"
+        android:textSize="18sp"
+        app:drawableTint="@color/white"
+        android:textColor="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ly_detail"
+            android:visibility="gone"
+            android:layout_marginTop="24dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_doctor"
+                android:fontFamily="@font/svn_avo"
+                android:text="Tên bác sĩ : 2022-12-12"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_time"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Ca khám : 9-11h"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_name_patient"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Tên bệnh nhân : Bùi Huy Hiệu"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_phone_numbder"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Số điện thoại : 0367663681"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_gender"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Giới tính : Nam"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_address"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Địa chỉ : Bắc Giang"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_reason"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Lý do : Đau chân"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_hospital"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Bệnh viện khám : Bệnh viện Bạch Mai"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_location_hospital"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:text="Địa chỉ bệnh viện : ....."
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_type_booking"
+                android:fontFamily="@font/svn_avo"
+                android:layout_marginTop="16dp"
+                android:gravity="start"
+                android:text="Hình thức khám : Khám tại cơ sở y tế"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</com.google.android.material.card.MaterialCardView>

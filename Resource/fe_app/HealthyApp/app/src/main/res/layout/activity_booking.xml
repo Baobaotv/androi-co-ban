@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:measureAllChildren="true"
+    tools:context=".ui.activities.BookingActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_view_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/SlateGray"
+            app:cardCornerRadius="12dp"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:id="@+id/img_avatar"
+                    android:layout_width="130sp"
+                    android:layout_height="130sp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/img_home"
+                    app:riv_oval="true" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_booking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_toEndOf="@id/img_avatar"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="ĐẶT LỊCH KHÁM"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_booking"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/img_avatar"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="start"
+                    android:maxLines="2"
+                    android:text="Bs.Nguyen Thi Anh"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_specialist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_name"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/img_avatar"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="start"
+                    android:text="Bác sĩ chuyên khoa: Răng hàm mặt"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_specialist"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@id/img_avatar"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/svn_avo_bold"
+                    android:gravity="start"
+                    android:text="9h-11h"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+            </RelativeLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ly_rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toEndOf="@id/card_view_title"
+            app:layout_constraintStart_toStartOf="@id/card_view_title"
+            app:layout_constraintTop_toBottomOf="@id/card_view_title">
+
+            <RadioButton
+                android:id="@+id/rd_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginEnd="12dp"
+                android:checked="true"
+                android:text="Đặt cho mình" />
+
+            <RadioButton
+                android:id="@+id/rd_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Đặt cho người thân" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/ly_rd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/ly_rd"
+            app:layout_constraintTop_toBottomOf="@id/ly_rd">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_name_scheduler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_round_person_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Họ tên người đặt lịch (Bắt buộc)"
+                android:inputType="text"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_round_phone_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Nhập số điện thoại bệnh nhân ( Bắt buộc )"
+                android:inputType="phone"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_round_person_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Họ và tên bệnh nhân ( Bắt buộc )"
+                android:inputType="text"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/img_avatar"
+                android:ellipsize="end"
+                android:fontFamily="@font/svn_avo"
+                android:gravity="start"
+                android:maxLines="2"
+                android:text="Ghi rõ Họ và Tên, Viết Hoa những chữ cái đầu tiên, Ví dụ: Bùi Huy Hiệu"
+                android:textSize="12sp" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ly_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/card_view_title"
+                app:layout_constraintStart_toStartOf="@id/card_view_title"
+                app:layout_constraintTop_toBottomOf="@id/card_view_title">
+
+                <RadioButton
+                    android:id="@+id/rd_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="12dp"
+                    android:checked="true"
+                    android:text="Nam" />
+
+                <RadioButton
+                    android:id="@+id/rd_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Nữ" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_phone_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_round_phone_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Nhập số điện thoại liên hệ ( Bắt buộc )"
+                android:inputType="phone"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_round_date_range_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Nhập năm sinh ( Bắt buộc )"
+                android:inputType="number"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableStart="@drawable/ic_location_24"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:hint="Nhập địa chỉ"
+                android:inputType="text"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_reason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/svn_avo"
+                android:gravity="start|top"
+                android:hint="Nhập lý do khám"
+                android:inputType="text"
+                android:minHeight="120dp"
+                android:paddingVertical="20dp"
+                android:textColor="@color/black"
+                android:textColorHint="#CBCBCB"
+                android:textSize="14sp"
+                app:drawableTint="@color/RoyalBlue" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/ly_type_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@id/card_view_title"
+                app:layout_constraintStart_toStartOf="@id/card_view_title"
+                app:layout_constraintTop_toBottomOf="@id/card_view_title">
+
+                <RadioButton
+                    android:id="@+id/rd_offline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginEnd="12dp"
+                    android:checked="true"
+                    android:text="Khám tại cơ sở" />
+
+                <RadioButton
+                    android:id="@+id/rd_online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Tư vấn online" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_booking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/svn_avo_bold"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Đặt lịch khám"
+                android:textSize="18sp"
+                app:backgroundTint="@color/RoyalBlue"
+                app:cornerRadius="10dp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

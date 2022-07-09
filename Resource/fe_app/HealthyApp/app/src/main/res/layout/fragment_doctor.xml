@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bác sĩ"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:fontFamily="@font/svn_avo_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edt_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:drawableStart="@drawable/ic_round_search_24"
+        android:drawablePadding="12dp"
+        android:fontFamily="@font/svn_avo"
+        android:hint="Nhập tên bác sĩ"
+        android:inputType="textPersonName"
+        android:paddingVertical="20dp"
+        android:textColor="@color/black"
+        android:textColorHint="#CBCBCB"
+        android:textSize="14sp"
+        app:drawableTint="@color/RoyalBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_doctor" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_specialist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@id/edt_search"
+        app:layout_constraintTop_toBottomOf="@id/edt_search" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinner_hospital"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintStart_toStartOf="@id/edt_search"
+        app:layout_constraintTop_toBottomOf="@id/spinner_specialist" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_search"
+        android:text="Tìm kiếm"
+        android:backgroundTint="@color/CadetBlue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_hospital"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_doctor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:nestedScrollingEnabled="false"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_search"
+        tools:itemCount="2"
+        tools:listitem="@layout/item_news" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+
+;
+java:S1452,"&Remove usage of generic wildcard type.(î¹Ÿp
+;
+java:S1452B"&Remove usage of generic wildcard type.(Ü×«l
+s
+java:S1128"VRemove this unused import 'org.springframework.security.core.userdetails.UserDetails'.(ÊÁ¥8áóøŞ0
+h
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Controller'.(øŠ—Öùÿÿÿÿ8áóøŞ0
+[
+java:S1128"9Remove this unused import 'org.springframework.ui.Model'.(ê†ıÿÿÿÿ8áóøŞ0
+h
+java:S1128"FRemove this unused import 'com.KMA.BookingCare.Api.form.HandbookForm'.(¥‘úäúÿÿÿÿ8áóøŞ0
+V
+java:S1128"9Remove this unused import 'com.KMA.BookingCare.Dto.User'.(¹«È‚8áóøŞ0
+_
+java:S1128"BRemove this unused import 'com.KMA.BookingCare.Entity.UserEntity'.(¬Úü8áóøŞ0
+o
+java:S2293D"YReplace the type specification in this constructor call with the diamond operator ("<>").(¬îî´
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Š†«Ïøÿÿÿÿ
